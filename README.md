@@ -1,7 +1,7 @@
 Dropwizard Vavr Bundle
 ======================
 
-[![Build Status](https://travis-ci.org/dropwizard/dropwizard-vavr.svg?branch=master)](https://travis-ci.org/dropwizard/dropwizard-vavr)
+[![Build Status](https://travis-ci.org/dropwizard/dropwizard-vavr.svg?branch=1.1.4)](https://travis-ci.org/dropwizard/dropwizard-vavr)
 [![Coverage Status](https://img.shields.io/coveralls/dropwizard/dropwizard-vavr.svg)](https://coveralls.io/r/dropwizard/dropwizard-vavr)
 [![Maven Central](https://img.shields.io/maven-central/v/io.dropwizard.modules/dropwizard-vavr.svg)](http://mvnrepository.com/artifact/io.dropwizard.modules/dropwizard-vavr)
 
@@ -17,7 +17,7 @@ The package provides integration of [Vavr] classes into Jackson (via [vavr-jacks
 Usage
 -----
 
-Just add `VavrBundle` to your Dropwizard application as a [Bundle](http://www.dropwizard.io/1.1.0/docs/manual/core.html#bundles).
+Just add `VavrBundle` to your Dropwizard application as a [Bundle](http://www.dropwizard.io/1.1.4/docs/manual/core.html#bundles).
 
     public class DemoApplication extends Application<DemoConfiguration> {
         // [...]
@@ -38,7 +38,7 @@ This project is available on Maven Central. To add it to your project simply add
     <dependency>
       <groupId>io.dropwizard.modules</groupId>
       <artifactId>dropwizard-vavr</artifactId>
-      <version>1.1.0-1</version>
+      <version>1.1.4-1</version>
     </dependency>
 
 
@@ -51,7 +51,7 @@ Please file bug reports and feature requests in [GitHub issues](https://github.c
 License
 -------
 
-Copyright (c) 2017 Jochen Schalanda
+Copyright (c) 2017-2018 Jochen Schalanda
 
 This library is licensed under the Apache License, Version 2.0.
 
