@@ -7,17 +7,18 @@ Dropwizard Vavr Bundle
 
 A [Dropwizard] bundle for integrating [Vavr] in [Dropwizard] applications.
 
-The package provides integration of [Vavr] classes into Jackson (via [vavr-jackson]) and Jersey (via custom classes).
+The package provides integration of [Vavr] classes into Jackson (via [vavr-jackson]), Jersey (via custom classes), and Jdbi 3 (via [jdbi3-vavr]).
 
 
 [Vavr]: http://www.vavr.io/
 [Dropwizard]: http://dropwizard.io/
 [vavr-jackson]: https://github.com/vavr-io/vavr-jackson
+[jdbi3-vavr]: https://github.com/jdbi/jdbi
 
 Usage
 -----
 
-Just add `VavrBundle` to your Dropwizard application as a [Bundle](https://www.dropwizard.io/en/release-1.3.x/manual/core.html#bundles).
+Just add `VavrBundle` to your Dropwizard application as a [Bundle](https://www.dropwizard.io/en/release-2.0.x/manual/core.html#bundles).
 
     public class DemoApplication extends Application<DemoConfiguration> {
         // [...]
@@ -38,7 +39,7 @@ This project is available on Maven Central. To add it to your project simply add
     <dependency>
       <groupId>io.dropwizard.modules</groupId>
       <artifactId>dropwizard-vavr</artifactId>
-      <version>1.3.0-2</version>
+      <version>2.0.0-1</version>
     </dependency>
 
 
@@ -51,7 +52,7 @@ Please file bug reports and feature requests in [GitHub issues](https://github.c
 License
 -------
 
-Copyright (c) 2017-2019 Jochen Schalanda, Dropwizard Team
+Copyright (c) 2017-2020 Jochen Schalanda, Dropwizard Team
 
 This library is licensed under the Apache License, Version 2.0.
 
