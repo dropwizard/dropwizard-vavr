@@ -2,39 +2,35 @@ package io.dropwizard.vavr.validation;
 
 import io.vavr.control.Option;
 import org.hibernate.validator.HibernateValidator;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.valuehandling.UnwrapValidatedValue;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ValueValidatedValueUnwrapperTest {
+public class ValueValidatedValueExtractorTest {
     static class Example {
 
         @Min(3)
-        @UnwrapValidatedValue
         Option<Integer> three = Option.none();
 
         @NotNull
-        @UnwrapValidatedValue
         Option<Integer> notNull = Option.of(123);
 
         @NotBlank
-        @UnwrapValidatedValue
         Option<String> notBlank = Option.of("Foobar");
     }
 
     private final Validator validator = Validation
             .byProvider(HibernateValidator.class)
             .configure()
-            .addValidatedValueHandler(new ValueValidatedValueUnwrapper())
+            .addValueExtractor(ValueValidatedValueExtractor.DESCRIPTOR.getValueExtractor())
             .buildValidatorFactory()
             .getValidator();
 

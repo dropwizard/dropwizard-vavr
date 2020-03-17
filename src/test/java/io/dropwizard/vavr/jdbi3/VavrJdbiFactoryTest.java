@@ -1,9 +1,6 @@
 package io.dropwizard.vavr.jdbi3;
 
-import com.codahale.metrics.MetricRegistry;
 import io.dropwizard.db.DataSourceFactory;
-import io.dropwizard.jackson.Jackson;
-import io.dropwizard.jersey.validation.Validators;
 import io.dropwizard.setup.Environment;
 import io.vavr.collection.Array;
 import io.vavr.collection.IndexedSeq;
@@ -17,27 +14,25 @@ import io.vavr.collection.Vector;
 import io.vavr.control.Option;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.skife.jdbi.v2.sqlobject.customizers.SingleValueResult;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class VavrJdbiFactoryTest {
-    private final Environment env = new Environment("test", Jackson.newObjectMapper(),
-            Validators.newValidator(), new MetricRegistry(), null);
+class VavrJdbiFactoryTest {
+    private final Environment env = new Environment("test");
 
     private TaskDao dao;
 
-    @Before
-    public void setupTests() throws IOException {
+    @BeforeEach
+    public void setupTests() {
         final DataSourceFactory dataSourceFactory = new DataSourceFactory();
         dataSourceFactory.setDriverClass("org.h2.Driver");
         dataSourceFactory.setUrl("jdbc:h2:mem:test-" + System.currentTimeMillis() + "?user=sa");
@@ -114,7 +109,7 @@ public class VavrJdbiFactoryTest {
     }
 
     @Test
-    @Ignore("Tree is not supported by this version of jdbi3-vavr")
+    @Disabled("jdbi3-vavr doesn't support io.vavr.collection.Tree")
     public void testTree() {
         assertThat(dao.findStartDatesAsTree()).hasSize(2);
     }
@@ -128,7 +123,7 @@ public class VavrJdbiFactoryTest {
                     @Bind("comments") Option<String> comments);
 
         @SqlQuery("SELECT end_date FROM tasks WHERE id = :id")
-        @SingleValueResult
+        @SingleValue
         Option<LocalDate> findEndDateById(@Bind("id") int id);
 
         @SqlQuery("SELECT start_date FROM tasks")

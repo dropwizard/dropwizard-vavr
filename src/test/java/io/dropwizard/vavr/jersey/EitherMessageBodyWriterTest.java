@@ -3,10 +3,11 @@ package io.dropwizard.vavr.jersey;
 import com.codahale.metrics.MetricRegistry;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import io.dropwizard.logging.BootstrapLogging;
+import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
 import io.vavr.control.Either;
-import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -17,7 +18,8 @@ import javax.ws.rs.core.Response;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class EitherMessageBodyWriterTest extends JerseyTest {
+@ExtendWith(DropwizardExtensionsSupport.class)
+public class EitherMessageBodyWriterTest extends AbstractJerseyTest {
     static {
         BootstrapLogging.bootstrap();
     }

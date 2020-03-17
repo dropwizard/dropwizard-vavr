@@ -3,9 +3,10 @@ package io.dropwizard.vavr.jersey;
 import com.codahale.metrics.MetricRegistry;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import io.dropwizard.logging.BootstrapLogging;
-import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -14,17 +15,33 @@ import javax.ws.rs.core.Response;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class EmptyValueExceptionMapperTest extends JerseyTest {
+public class EmptyValueExceptionMapperTest extends AbstractJerseyTest {
     static {
         BootstrapLogging.bootstrap();
     }
 
     @Override
     protected Application configure() {
-        forceSet(TestProperties.CONTAINER_PORT, "0");
         return DropwizardResourceConfig.forTesting(new MetricRegistry())
                 .register(EmptyValueExceptionMapper.class)
                 .register(TestResource.class);
+    }
+
+    protected EmptyValueExceptionMapperTest() {
+        super();
+        forceSet(TestProperties.CONTAINER_PORT, "0");
+    }
+
+    @Override
+    @BeforeEach
+    public void setUp() throws Exception {
+        super.setUp();
+    }
+
+    @Override
+    @AfterEach
+    public void tearDown() throws Exception {
+        super.tearDown();
     }
 
     @Test

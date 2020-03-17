@@ -5,9 +5,8 @@ import io.dropwizard.jersey.DropwizardResourceConfig;
 import io.dropwizard.logging.BootstrapLogging;
 import io.vavr.Lazy;
 import io.vavr.control.Option;
-import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -18,7 +17,7 @@ import javax.ws.rs.core.Response;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ValueMessageBodyWriterTest extends JerseyTest {
+public class ValueMessageBodyWriterTest extends AbstractJerseyTest {
     static {
         BootstrapLogging.bootstrap();
     }
