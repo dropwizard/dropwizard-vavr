@@ -1,7 +1,7 @@
 package io.dropwizard.vavr.jersey;
 
 import io.vavr.control.Option;
-import org.glassfish.hk2.api.ServiceLocator;
+import org.glassfish.jersey.internal.inject.InjectionManager;
 import org.glassfish.jersey.internal.inject.Providers;
 import org.glassfish.jersey.internal.util.ReflectionHelper;
 import org.glassfish.jersey.internal.util.collection.ClassTypePair;
@@ -16,11 +16,11 @@ import java.util.List;
 
 @Singleton
 public class OptionParamConverterProvider implements ParamConverterProvider {
-    private final ServiceLocator locator;
+    private final InjectionManager manager;
 
     @Inject
-    public OptionParamConverterProvider(final ServiceLocator locator) {
-        this.locator = locator;
+    public OptionParamConverterProvider(final InjectionManager manager) {
+        this.manager = manager;
     }
 
     /**
@@ -46,7 +46,7 @@ public class OptionParamConverterProvider implements ParamConverterProvider {
                 };
             }
 
-            for (ParamConverterProvider provider : Providers.getProviders(locator, ParamConverterProvider.class)) {
+            for (ParamConverterProvider provider : Providers.getProviders(manager, ParamConverterProvider.class)) {
                 final ParamConverter<?> converter = provider.getConverter(ctp.rawClass(), ctp.type(), annotations);
                 if (converter != null) {
                     return new ParamConverter<T>() {

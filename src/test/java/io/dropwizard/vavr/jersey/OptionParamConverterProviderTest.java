@@ -4,9 +4,8 @@ import com.codahale.metrics.MetricRegistry;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import io.dropwizard.logging.BootstrapLogging;
 import io.vavr.control.Option;
-import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.GET;
@@ -21,7 +20,7 @@ import javax.ws.rs.core.MediaType;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class OptionParamConverterProviderTest extends JerseyTest {
+public class OptionParamConverterProviderTest extends AbstractJerseyTest {
     static {
         BootstrapLogging.bootstrap();
     }

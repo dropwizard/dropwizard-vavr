@@ -9,7 +9,7 @@ import io.dropwizard.vavr.jersey.EmptyValueExceptionMapper;
 import io.dropwizard.vavr.jersey.LazyParamFeature;
 import io.dropwizard.vavr.jersey.OptionParamFeature;
 import io.dropwizard.vavr.jersey.ValueMessageBodyWriter;
-import io.dropwizard.vavr.validation.ValueValidatedValueUnwrapper;
+import io.dropwizard.vavr.validation.ValueValidatedValueExtractor;
 import io.vavr.jackson.datatype.VavrModule;
 import org.hibernate.validator.HibernateValidatorConfiguration;
 
@@ -87,10 +87,10 @@ public class VavrBundle implements Bundle {
 
     /**
      * Creates a new {@link HibernateValidatorConfiguration} with all the custom {@link
-     * org.hibernate.validator.spi.valuehandling.ValidatedValueUnwrapper} registered.
+     * javax.validation.valueextraction.ValueExtractor} registered.
      */
     private static HibernateValidatorConfiguration newValidatorConfiguration() {
         return Validators.newConfiguration()
-                .addValidatedValueHandler(new ValueValidatedValueUnwrapper());
+                .addValueExtractor(ValueValidatedValueExtractor.DESCRIPTOR.getValueExtractor());
     }
 }
