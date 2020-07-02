@@ -4,6 +4,7 @@ import io.dropwizard.Bundle;
 import io.dropwizard.jersey.validation.Validators;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.vavr.jersey.CollectionParamFeature;
 import io.dropwizard.vavr.jersey.EitherMessageBodyWriter;
 import io.dropwizard.vavr.jersey.EmptyValueExceptionMapper;
 import io.dropwizard.vavr.jersey.LazyParamFeature;
@@ -67,6 +68,7 @@ public class VavrBundle implements Bundle {
         environment.jersey().register(EmptyValueExceptionMapper.class);
         environment.jersey().register(LazyParamFeature.class);
         environment.jersey().register(OptionParamFeature.class);
+        environment.jersey().register(CollectionParamFeature.class);
 
         // These MessageBodyWriters will shadow JacksonMessageBodyProvider and thus make it impossible
         // to serialize or deserialize Either<Left, Right> or classes based on Value<T>, such as Option<T>
