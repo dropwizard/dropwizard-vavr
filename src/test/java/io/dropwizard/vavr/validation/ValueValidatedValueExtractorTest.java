@@ -30,7 +30,7 @@ public class ValueValidatedValueExtractorTest {
     private final Validator validator = Validation
             .byProvider(HibernateValidator.class)
             .configure()
-            .addValueExtractor(ValueValidatedValueExtractor.DESCRIPTOR.getValueExtractor())
+            .addValueExtractor(new ValueValidatedValueExtractor())
             .buildValidatorFactory()
             .getValidator();
 
