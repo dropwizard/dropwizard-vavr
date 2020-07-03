@@ -4,6 +4,7 @@ import io.dropwizard.Bundle;
 import io.dropwizard.jersey.validation.Validators;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.util.Resources;
 import io.dropwizard.vavr.jersey.CollectionParamFeature;
 import io.dropwizard.vavr.jersey.EitherMessageBodyWriter;
 import io.dropwizard.vavr.jersey.EmptyValueExceptionMapper;
@@ -15,6 +16,10 @@ import io.vavr.jackson.datatype.VavrModule;
 import org.hibernate.validator.HibernateValidatorConfiguration;
 
 import javax.validation.ValidatorFactory;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UncheckedIOException;
+import java.net.URL;
 
 public class VavrBundle implements Bundle {
     private final VavrModule.Settings settings;
@@ -92,7 +97,16 @@ public class VavrBundle implements Bundle {
      * javax.validation.valueextraction.ValueExtractor} registered.
      */
     private static HibernateValidatorConfiguration newValidatorConfiguration() {
+        final InputStream vavrConstraints;
+        try {
+            final URL resource = Resources.getResource("constraints-vavr.xml");
+            vavrConstraints = resource.openStream();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+
         return Validators.newConfiguration()
-                .addValueExtractor(ValueValidatedValueExtractor.DESCRIPTOR.getValueExtractor());
+                .addValueExtractor(new ValueValidatedValueExtractor())
+                .addMapping(vavrConstraints);
     }
 }

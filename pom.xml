@@ -96,6 +96,11 @@
             <version>${vavr.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr-beanvalidation2</artifactId>
+            <version>0.10.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.jdbi</groupId>
             <artifactId>jdbi3-vavr</artifactId>
             <optional>true</optional>
