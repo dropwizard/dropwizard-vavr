@@ -88,7 +88,7 @@ public class VavrBundle implements Bundle {
     /**
      * Creates a new {@link ValidatorFactory} based on {@link #newValidatorConfiguration()}
      */
-    private static ValidatorFactory newValidatorFactory() {
+    protected ValidatorFactory newValidatorFactory() {
         return newValidatorConfiguration().buildValidatorFactory();
     }
 
@@ -96,7 +96,7 @@ public class VavrBundle implements Bundle {
      * Creates a new {@link HibernateValidatorConfiguration} with all the custom {@link
      * javax.validation.valueextraction.ValueExtractor} registered.
      */
-    private static HibernateValidatorConfiguration newValidatorConfiguration() {
+    protected HibernateValidatorConfiguration newValidatorConfiguration() {
         final InputStream vavrConstraints;
         try {
             final URL resource = Resources.getResource("constraints-vavr.xml");
