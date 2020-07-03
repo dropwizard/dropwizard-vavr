@@ -83,7 +83,7 @@ public class VavrBundle implements Bundle {
     /**
      * Creates a new {@link ValidatorFactory} based on {@link #newValidatorConfiguration()}
      */
-    private static ValidatorFactory newValidatorFactory() {
+    protected ValidatorFactory newValidatorFactory() {
         return newValidatorConfiguration().buildValidatorFactory();
     }
 
@@ -91,7 +91,7 @@ public class VavrBundle implements Bundle {
      * Creates a new {@link HibernateValidatorConfiguration} with all the custom {@link
      * org.hibernate.validator.spi.valuehandling.ValidatedValueUnwrapper} registered.
      */
-    private static HibernateValidatorConfiguration newValidatorConfiguration() {
+    protected HibernateValidatorConfiguration newValidatorConfiguration() {
         return Validators.newConfiguration()
                 .addValidatedValueHandler(new ValueValidatedValueUnwrapper());
     }
