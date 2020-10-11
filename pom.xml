@@ -64,6 +64,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <sonar.projectKey>dropwizard_dropwizard-vavr</sonar.projectKey>
+        <sonar.organization>dropwizard</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
         <dropwizard.version>2.0.13</dropwizard.version>
         <vavr.version>0.10.3</vavr.version>
     </properties>
@@ -221,6 +226,11 @@
                     <artifactId>coveralls-maven-plugin</artifactId>
                     <version>4.3.0</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>3.7.0.1746</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -267,6 +277,12 @@
                         <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <goals>
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
