@@ -317,6 +317,9 @@
     <profiles>
         <profile>
             <id>release</id>
+            <properties>
+                <gpg.keyname>EDA86E9FB607B5FC9223FB767D4868B53E31E7AD</gpg.keyname>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -353,6 +356,12 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
