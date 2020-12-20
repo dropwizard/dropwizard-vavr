@@ -1,6 +1,0 @@
-sudo: false
-language: java
-after_success:
-  - bash .travis_after_success.sh
-jdk:
-  - openjdk8
