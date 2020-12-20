@@ -1,8 +1,8 @@
 Dropwizard Vavr Bundle
 ======================
 
-[![Build Status](https://travis-ci.org/dropwizard/dropwizard-vavr.svg?branch=master)](https://travis-ci.org/dropwizard/dropwizard-vavr)
-[![Coverage Status](https://img.shields.io/coveralls/dropwizard/dropwizard-vavr.svg)](https://coveralls.io/r/dropwizard/dropwizard-vavr)
+[![Build](https://github.com/dropwizard/dropwizard-vavr/workflows/Java%20CI/badge.svg)](https://github.com/dropwizard/dropwizard-vavr/actions?query=workflow%3A%22Java+CI%22)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dropwizard_dropwizard-vavr&metric=alert_status)](https://sonarcloud.io/dashboard?id=dropwizard_dropwizard-vavr)
 [![Maven Central](https://img.shields.io/maven-central/v/io.dropwizard.modules/dropwizard-vavr.svg)](http://mvnrepository.com/artifact/io.dropwizard.modules/dropwizard-vavr)
 
 A [Dropwizard] bundle for integrating [Vavr] in [Dropwizard] applications.
