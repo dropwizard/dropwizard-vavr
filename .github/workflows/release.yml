@@ -2,6 +2,7 @@ name: Release
 on:
   push:
     tags:
+    - 'dropwizard-vavr-*'
 jobs:
   release:
     runs-on: 'ubuntu-latest'
