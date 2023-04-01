@@ -4,7 +4,7 @@
 
     <groupId>io.dropwizard.modules</groupId>
     <artifactId>dropwizard-vavr</artifactId>
-    <version>3.0.0-1-SNAPSHOT</version>
+    <version>3.0.0-1</version>
     <packaging>jar</packaging>
 
     <name>Dropwizard Vavr Bundle</name>
@@ -23,7 +23,7 @@
         <developerConnection>scm:git:git@github.com:dropwizard/dropwizard-vavr.git</developerConnection>
         <connection>scm:git:https://github.com/dropwizard/dropwizard-vavr.git</connection>
         <url>https://github.com/dropwizard/dropwizard-vavr</url>
-        <tag>HEAD</tag>
+        <tag>dropwizard-vavr-3.0.0-1</tag>
     </scm>
 
     <ciManagement>
