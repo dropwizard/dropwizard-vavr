@@ -10,12 +10,12 @@ import org.glassfish.jersey.server.internal.inject.ParamInjectionResolver;
 import org.glassfish.jersey.server.internal.process.RequestProcessingContextReference;
 import org.glassfish.jersey.server.spi.internal.ValueParamProvider;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
-import javax.inject.Singleton;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.HeaderParam;
-import javax.ws.rs.QueryParam;
+import jakarta.inject.Inject;
+import jakarta.inject.Provider;
+import jakarta.inject.Singleton;
+import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.HeaderParam;
+import jakarta.ws.rs.QueryParam;
 
 public class CollectionParamBinder extends AbstractBinder {
     @Override

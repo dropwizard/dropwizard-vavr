@@ -15,12 +15,12 @@ import org.glassfish.jersey.server.internal.inject.MultivaluedParameterExtractor
 import org.glassfish.jersey.server.internal.inject.MultivaluedParameterExtractorProvider;
 import org.glassfish.jersey.server.model.Parameter;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
-import javax.ws.rs.core.Form;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.ext.ParamConverter;
-import javax.ws.rs.ext.ParamConverterProvider;
+import jakarta.inject.Inject;
+import jakarta.inject.Provider;
+import jakarta.ws.rs.core.Form;
+import jakarta.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.ext.ParamConverter;
+import jakarta.ws.rs.ext.ParamConverterProvider;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.util.function.Function;

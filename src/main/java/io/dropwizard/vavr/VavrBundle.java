@@ -16,7 +16,7 @@ import io.dropwizard.vavr.validation.ValueValidatedValueExtractor;
 import io.vavr.jackson.datatype.VavrModule;
 import org.hibernate.validator.HibernateValidatorConfiguration;
 
-import javax.validation.ValidatorFactory;
+import jakarta.validation.ValidatorFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
