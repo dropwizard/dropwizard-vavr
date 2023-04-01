@@ -1,7 +1,7 @@
 package io.dropwizard.vavr.jersey;
 
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
 
 /**
  * The default response when an empty {@link io.vavr.Value} is returned, is to respond with

@@ -4,7 +4,7 @@ import io.vavr.collection.Seq;
 import io.vavr.control.Option;
 import org.glassfish.jersey.server.internal.inject.MultivaluedParameterExtractor;
 
-import javax.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.MultivaluedMap;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;

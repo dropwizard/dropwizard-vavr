@@ -4,7 +4,7 @@
 
     <groupId>io.dropwizard.modules</groupId>
     <artifactId>dropwizard-vavr</artifactId>
-    <version>3.0.0-1-SNAPSHOT</version>
+    <version>4.0.0-1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Dropwizard Vavr Bundle</name>
@@ -68,7 +68,7 @@
         <sonar.organization>dropwizard</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
-        <dropwizard.version>3.0.0</dropwizard.version>
+        <dropwizard.version>4.0.0</dropwizard.version>
         <vavr.version>0.10.3</vavr.version>
     </properties>
 
