@@ -4,7 +4,7 @@ import com.codahale.metrics.MetricRegistry;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import io.dropwizard.jersey.jackson.JacksonMessageBodyProvider;
-import io.dropwizard.logging.BootstrapLogging;
+import io.dropwizard.logging.common.BootstrapLogging;
 import io.vavr.collection.Array;
 import io.vavr.collection.List;
 import io.vavr.collection.Seq;
@@ -12,7 +12,7 @@ import io.vavr.collection.Vector;
 import io.vavr.jackson.datatype.VavrModule;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;

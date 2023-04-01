@@ -2,7 +2,7 @@ package io.dropwizard.vavr.jersey;
 
 import com.codahale.metrics.MetricRegistry;
 import io.dropwizard.jersey.DropwizardResourceConfig;
-import io.dropwizard.logging.BootstrapLogging;
+import io.dropwizard.logging.common.BootstrapLogging;
 import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
 import io.vavr.control.Either;
 import org.glassfish.jersey.test.TestProperties;
