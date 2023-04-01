@@ -1,7 +1,7 @@
 package io.dropwizard.vavr.jdbi3;
 
+import io.dropwizard.core.setup.Environment;
 import io.dropwizard.db.DataSourceFactory;
-import io.dropwizard.setup.Environment;
 import io.vavr.collection.Array;
 import io.vavr.collection.IndexedSeq;
 import io.vavr.collection.List;

@@ -1,9 +1,10 @@
 package io.dropwizard.vavr;
 
-import io.dropwizard.Bundle;
+import io.dropwizard.core.Configuration;
+import io.dropwizard.core.ConfiguredBundle;
 import io.dropwizard.jersey.validation.Validators;
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
 import io.dropwizard.util.Resources;
 import io.dropwizard.vavr.jersey.CollectionParamFeature;
 import io.dropwizard.vavr.jersey.EitherMessageBodyWriter;
@@ -21,7 +22,7 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.net.URL;
 
-public class VavrBundle implements Bundle {
+public class VavrBundle<T extends Configuration> implements ConfiguredBundle<T> {
     private final VavrModule.Settings settings;
     private final boolean registerMessageBodyWriters;
 
@@ -69,7 +70,7 @@ public class VavrBundle implements Bundle {
     }
 
     @Override
-    public void run(Environment environment) {
+    public void run(T configuration, Environment environment) {
         environment.jersey().register(EmptyValueExceptionMapper.class);
         environment.jersey().register(LazyParamFeature.class);
         environment.jersey().register(OptionParamFeature.class);
