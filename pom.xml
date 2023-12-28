@@ -8,7 +8,7 @@
     </parent>
     <groupId>io.dropwizard.modules</groupId>
     <artifactId>dropwizard-vavr</artifactId>
-    <version>3.0.0-2-SNAPSHOT</version>
+    <version>3.0.0-2</version>
     <packaging>jar</packaging>
 
     <name>Dropwizard Vavr Bundle</name>
@@ -154,4 +154,8 @@
             </plugin>
         </plugins>
     </reporting>
+
+  <scm>
+    <tag>dropwizard-vavr-3.0.0-2</tag>
+  </scm>
 </project>
