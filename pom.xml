@@ -32,7 +32,7 @@
     <properties>
         <sonar.projectKey>dropwizard_dropwizard-vavr</sonar.projectKey>
 
-        <vavr.version>0.10.3</vavr.version>
+        <vavr.version>0.11.0</vavr.version>
     </properties>
 
     <dependencies>
